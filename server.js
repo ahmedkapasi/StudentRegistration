@@ -3,7 +3,7 @@ var app = express();
 var bodyParser = require('body-parser');
 app.use(express.static(__dirname+'/public'));
 app.use(bodyParser.json());
-var port = process.env.PORT || 3000;
+var port = 80;//process.env.PORT || 3000;
 app.listen(port);
 
 console.log("server started at port 3000...")
