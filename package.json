@@ -10,7 +10,7 @@
   {
     "node":"6.9.x",
     "npm":"3.10.x"
-  }
+  },
   "author": "Ahmed Kapasi",
   "license": "ISC"
 }
