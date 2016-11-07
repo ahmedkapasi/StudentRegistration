@@ -20,7 +20,7 @@ app.listen(port);
 console.log("server started at port "+ port);
 student = {};
 app.get('/',function(req,res){
-	res.render("index");
+	res.render("index.html");
 })
 app.get('/getAllStudents',function(req,res){
 
