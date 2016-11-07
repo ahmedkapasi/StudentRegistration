@@ -8,7 +8,7 @@ app.use(express.static(workingdir +'/public/'));
 app.use(bodyParser.json());
 var port = process.env.PORT || 3000;
 app.configure(function(){
-	app.set('views',workingdir+'public/views')
+	app.set('views',workingdir+'/public')
 	app.set('view engine','html');
 });
 app.listen(port);
