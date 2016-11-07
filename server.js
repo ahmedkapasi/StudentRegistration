@@ -11,7 +11,7 @@ app.listen(port);
 console.log("server started at port "+ port);
 student = {};
 app.get('/',function(req,res){
-	res.send("hello world");
+	res.redirect("public/index.html");
 })
 app.get('/getAllStudents',function(req,res){
 
