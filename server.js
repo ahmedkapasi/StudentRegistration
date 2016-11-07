@@ -7,6 +7,10 @@ console.log(workingdir);
 app.use(express.static(workingdir +'/public/'));
 app.use(bodyParser.json());
 var port = process.env.PORT || 3000;
+app.configure(function(){
+	app.set('views',workingdir+'public/views')
+	app.set('view engine','html');
+});
 app.listen(port);
 //var config = require('config.js')
 //config.show("running");
