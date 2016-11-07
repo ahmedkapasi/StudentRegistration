@@ -8,7 +8,7 @@ app.use(express.static(workingdir +'/public/'));
 app.use(bodyParser.json());
 var port = process.env.PORT || 3000;
 app.engine('html', cons.swig);
-app.set('views', workingdir + "/views");
+app.set('views', "/views");
 app.set('view engine', 'html');
 // app.configure(function(){
 // 	app.set('views',workingdir+'/public')
@@ -20,7 +20,7 @@ app.listen(port);
 console.log("server started at port "+ port);
 student = {};
 app.get('/',function(req,res){
-	res.render("index.html");
+	res.render("Index.html");
 })
 app.get('/getAllStudents',function(req,res){
 
