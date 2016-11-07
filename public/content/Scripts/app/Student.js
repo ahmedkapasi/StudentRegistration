@@ -5,6 +5,7 @@ app.controller("student-controller", function ($scope, $http) {
     $http.get("/getAllStudents").then(function (response, status) {
         //alert(response.data);
        // alert(response);
+        //debugger;
         $scope.students = response.data;
         
         //alert(data);

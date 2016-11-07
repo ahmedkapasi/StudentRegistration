@@ -1,16 +1,19 @@
 var express = require('express')
 var app = express();
-
+var cons = require('consolidate');
 var bodyParser = require('body-parser');
 var workingdir = process.cwd() || __dirname;
 console.log(workingdir);
 app.use(express.static(workingdir +'/public/'));
 app.use(bodyParser.json());
 var port = process.env.PORT || 3000;
-app.configure(function(){
-	app.set('views',workingdir+'/public')
-	app.set('view engine','html');
-});
+app.engine('html', cons.swig);
+app.set('views', workingdir + "/views");
+app.set('view engine', 'html');
+// app.configure(function(){
+// 	app.set('views',workingdir+'/public')
+// 	app.set('view engine','html');
+// });
 app.listen(port);
 //var config = require('config.js')
 //config.show("running");
