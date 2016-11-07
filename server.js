@@ -2,7 +2,9 @@ var express = require('express')
 var app = express();
 
 var bodyParser = require('body-parser');
-app.use(express.static(__dirname+'/public/'));
+var workingdir = process.cwd() || __dirname;
+console.log(workingdir);
+app.use(express.static(workingdir +'/public/'));
 app.use(bodyParser.json());
 var port = process.env.PORT || 3000;
 app.listen(port);
