@@ -4,7 +4,7 @@ app = angular.module("mainapp",[]);
 app.controller("student-controller", function ($scope, $http) {
     $http.get("/getAllStudents").then(function (response, status) {
         //alert(response.data);
-        alert(response);
+       // alert(response);
         $scope.students = response.data;
         
         //alert(data);
