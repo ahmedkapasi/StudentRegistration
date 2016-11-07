@@ -29,7 +29,7 @@ students = [{"id":"1","name":"ahmed","age":"22","address":"miraroad"},
 {"id":"3","name":"viraj","age":"32","address":"miraroad"}];
 	res.send(students);
 });
-app.post("/SaveStudentRecord",function(req,res){
+app.post("/UpdateStudentRecord",function(req,res){
 	console.log(req.body);
 	
 	//console.log(req.body);
@@ -43,5 +43,14 @@ app.post("/SaveStudentRecord",function(req,res){
 			students[i].address = stu.address;
 		}
 	}
+	res.send(students);
+});
+
+app.post("/AddStudentRecord",function(req,res){
+	console.log(req.body);
+	
+	//console.log(req.body);
+	var stu = req.body;
+	students.push(stu);
 	res.send(students);
 });

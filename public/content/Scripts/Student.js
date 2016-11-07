@@ -34,12 +34,20 @@ app.controller("student-controller", function ($scope, $http) {
         //$scope.students.push(itm);
     }
     $scope.SaveItem = function () {
+        methodname = "";
         if($scope.isAddMode)
+            {
+            methodname = "AddStudentRecord";
             data = $scope.newitm
+            }
         else
+        {
+            methodname = "UpdateStudentRecord"  
             data = $scope.item;
+        }
+            
         //jdata = JSON.stringify({ name: data.name, age: data.age, address: data.address });
-        $http.post("/SaveStudentRecord", data).then(
+        $http.post("/"+methodname, data).then(
             function (resp) {
                 
                 toastr["success"]("saved success");
