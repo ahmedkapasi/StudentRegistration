@@ -9,7 +9,8 @@ app.controller("student-controller", function ($scope, $http) {
         $scope.students = response.data;
         
         //alert(data);
-    }, function (error,status) {
+    }, function (error,status)
+    {
 
         alert(error.message);
     });
